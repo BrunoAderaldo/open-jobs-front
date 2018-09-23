@@ -1,0 +1,30 @@
+.hero {
+  display: flex;
+  align-items: center;
+  background-color: #514f8d;
+  background-position: 50vw center;
+  background-repeat: no-repeat;
+  background-size: 42%;
+  height: calc(100vh - 54px);
+  margin-top: 54px;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+.hero__title {
+  color: #f9fafb;
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
+.hero__description {
+  color: #f9fafb;
+  font-size: 1.25em;
+  font-weight: 400;
+}

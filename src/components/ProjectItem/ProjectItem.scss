@@ -1,0 +1,16 @@
+.project-item {
+  &__title {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
+
+.project-item__content {
+  overflow: hidden;
+  max-height: 250px;
+}
