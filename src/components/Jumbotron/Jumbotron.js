@@ -11,9 +11,9 @@ class Jumbotron extends Component {
             <div className="col-6">
               <div className="hero__wrapper">
                 <div className="hero__content">
-                  <h2 className="hero__title">Contrate freelancers especialistas para qualquer trabalho, on-line.</h2>
+                  <h2 className="hero__title">Mussum Ipsum, cacilds vidis litro abertis. Cevadis im ampola pa arma uma pindureta.</h2>
                   <p className="hero__description">
-                    Milhões de pequenos negócios usam o Freelancer.com para tornar suas ideias realidade.
+                    Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.
                   </p>
                 </div>
               </div>
