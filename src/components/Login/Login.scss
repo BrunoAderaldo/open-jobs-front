@@ -1,0 +1,42 @@
+.login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  animation-name: animate-state;
+  animation-duration: .8s;
+}
+
+.login {
+  &__message {
+    font-size: 2.1rem;
+    color: #3C4651;
+  }
+
+  &__sub-message {
+    font-size: 16px;
+    color: #96A0B6;
+    margin-bottom: 2.8rem;
+    font-weight: normal;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@keyframes animate-state {
+  0% {
+    margin-top: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
