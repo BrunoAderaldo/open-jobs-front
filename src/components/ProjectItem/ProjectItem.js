@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import './ProjectItem.css';
 
+import { Link } from 'react-router-dom';
+
 class ProjectItem extends Component {
   render() {
+    const { _id, name, description, skills } = this.props;
     return (
-      <div className="col-6">
+      <div className="col-12 col-md-6">
         <div className="card project-item">
           <div className="card-body">
             <div className="project-item__content">
-              <h3 className="project-item__name">{this.props.name}</h3>
-              <h5 className="project-item__description">{this.props.description}</h5>
+              <h3 className="project-item__name">{name}</h3>
+              <h5 className="project-item__description">{description}</h5>
             </div>
-            <button type="button" className="btn btn-block btn-secondary">Ver Job</button>
+            <Link to={`/projects/${_id}`} className="btn btn-block btn-secondary">Ver Job</Link>
           </div>
         </div>
       </div>
