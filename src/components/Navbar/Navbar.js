@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import './Navbar.css';
 
 import { Link } from 'react-router-dom';
+import { isAuthenticated, getStorageUser } from "../../services/auth";
 
 class Navbar extends Component {
+  showLoggedUser() {
+    if (isAuthenticated()) {
+      const userStringify = getStorageUser();
+      const user = JSON.parse(userStringify);
+
+      return <Link to={`/${user._id}`} className="btn btn-outline-primary">{ user.email }</Link>
+    } else {
+      return <Link to="/sign-in" className="btn btn-primary">Login</Link>
+    }
+  }
+
   render() {
     return (
       <header className="navbar">
@@ -23,7 +35,7 @@ class Navbar extends Component {
                     </ul>
                   </div>
                   <div className="navbar__actions">
-                    <Link to="/sign-in" className="btn btn-primary">Login</Link>
+                    { this.showLoggedUser() }
                   </div>
                 </div>
               </nav>
