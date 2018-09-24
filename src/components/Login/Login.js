@@ -19,7 +19,7 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    if (isAuthenticated) {
+    if (isAuthenticated()) {
       this.props.history.push('/');
     }
   }
