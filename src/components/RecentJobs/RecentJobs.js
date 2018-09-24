@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './RecentJobs.css';
 
-import axios from 'axios';
+import api from "../../services/api";
 
 import ProjectItem from '../ProjectItem/ProjectItem';
 
@@ -21,7 +21,7 @@ class RecentJobs extends Component {
 
   async getRecentProjects() {
     try {
-      const response = await axios.get('http://localhost:9000/projects');
+      const response = await api.get('/projects');
       let projects = response.data.projects;
 
       this.setState({ projects, isLoaded: true });
