@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import './styles/App.css';
+import { Component } from "react";
+import "./styles/App.css";
 
-import Navbar from './components/Navbar/Navbar';
-import Jumbotron from './components/Jumbotron/Jumbotron';
-import RecentJobs from './components/RecentJobs/RecentJobs';
+import { isAuthenticated } from "./services/auth";
 
 class App extends Component {
+  componentDidMount() {
+    if (isAuthenticated()) this.props.history.push("/dashboard");
+    else this.props.history.push("/auth/sign-in");
+  }
+
   render() {
-    return (
-      <React.Fragment>
-        <Navbar></Navbar>
-        <Jumbotron></Jumbotron>
-        <RecentJobs></RecentJobs>
-      </React.Fragment>
-    );
+    return null;
   }
 }
 
