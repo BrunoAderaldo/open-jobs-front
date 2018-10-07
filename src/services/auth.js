@@ -4,6 +4,13 @@ export const LOGGED_USER = "@openjobs:user";
 export const getStorageToken = () => localStorage.getItem(TOKEN_KEY);
 export const getStorageUser  = () => localStorage.getItem(LOGGED_USER);
 
+export const getLoggedUser = () => {
+  const userStringify = getStorageUser();
+  const userInfo = JSON.parse(userStringify);
+
+  return userInfo;
+};
+
 export const isAuthenticated = () => getStorageToken() !== null;
 
 export const login = (token, user) => {
