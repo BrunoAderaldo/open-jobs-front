@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Login.css';
+import React, { Component } from "react";
+import "./Login.css";
 
 import api from "../../services/api";
 import { isAuthenticated, login } from "../../services/auth";
@@ -9,9 +9,9 @@ class Login extends Component {
     super();
 
     this.state = {
-      email: '',
-      password: '',
-      error: ''
+      email: "",
+      password: "",
+      error: ""
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +20,7 @@ class Login extends Component {
 
   componentDidMount() {
     if (isAuthenticated()) {
-      this.props.history.push('/');
+      this.props.history.push("/dashboard");
     }
   }
 
@@ -37,13 +37,13 @@ class Login extends Component {
     const { email, password } = this.state;
 
     try {
-      const response = await api.post('auth/sign-in', { email, password });
+      const response = await api.post("auth/sign-in", { email, password });
 
       const { user, token } = response.data;
 
       login(token, user);
 
-      this.props.history.push('/');
+      this.props.history.push("/dashboard");
     } catch (error) {
       this.setState({ error: error.response.data.error });
     }
@@ -51,13 +51,13 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row align-items-center justify-content-center vh-100">
-          <div className="col-6">
+          <div className="col">
             <div className="login">
               <div className="login__message">Olá, bem vindo de volta</div>
               <div className="login__sub-message">Entre na sua conta aqui.</div>
-              { !!this.state.error && <h4>{ this.state.error }</h4> }
+              {!!this.state.error && <span className="register__error-message">{this.state.error}</span>}
 
               <div className="login__form">
                 <form className="form-horizontal" onSubmit={this.handleSubmit}>
