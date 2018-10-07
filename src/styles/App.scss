@@ -1,21 +1,46 @@
 @import "./bootstrap.scss";
 
 body {
-  background-color: #f9fafb;
+  background-color: #fbfcfc;
   color: #555;
   font-family: 'Muli', sans-serif;
 }
 
-section {
-  padding: 40px 0 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
 .vh-100 {
   height: 100vh;
+}
+
+.app-view {
+  .headerbar,
+  .page {
+    padding-left: 230px;
+  }
+}
+
+.page {
+  height: calc(100vh - 48px);
+}
+
+.no-caret {
+  &.dropdown-toggle::after { display: none; }
+}
+
+.dropdown-item.with-icon {
+  i {
+    margin-right: 1rem;
+  }
+}
+
+.btn-primary {
+  background-color: #4236dd;
+
+  &:hover {
+    background-color: #20438c;
+  }
+}
+
+.card {
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
 }
