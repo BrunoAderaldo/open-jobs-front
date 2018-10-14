@@ -21,9 +21,11 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    const id = this.props.match.params.id;
+    this.fetchUser(this.props.match.params.id);
+  }
 
-    this.fetchUser(id);
+  componentDidUpdate(prevProps) {
+    this.fetchUser(prevProps.match.params.id);
   }
 
   async fetchUser(id) {
