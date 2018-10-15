@@ -25,7 +25,9 @@ class Profile extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    this.fetchUser(prevProps.match.params.id);
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.fetchUser(this.props.match.params.id);
+    }
   }
 
   async fetchUser(id) {
@@ -51,7 +53,7 @@ class Profile extends Component {
       return (
         <div className="row justify-content-center">
           <div className="col">
-            <Link to="/settings" className="btn btn-primary">Editar Perfil</Link>
+            <Link to="/users/settings" className="btn btn-primary">Editar Perfil</Link>
           </div>
         </div>
       );
