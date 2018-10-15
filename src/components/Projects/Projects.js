@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import moment from "moment";
 import "./Projects.css";
+import Clock from 'react-feather/dist/icons/clock';
 
 import { Link } from "react-router-dom";
 
@@ -32,6 +34,34 @@ class Projects extends Component {
     }
   }
 
+  mountProjectsList() {
+    return (
+      this.state.projects.map(project =>
+        <div className="card mb-3" key={project._id}>
+          <div className="card-body">
+            <h3 className="card-title">
+              <Link to={`/project/${project._id}`} className="text-dark">{project.name}</Link>
+            </h3>
+
+            <p className="d-flex align-items-center">
+              <Clock size={16} className="mr-2" />
+              {moment(project.createdAt).fromNow()}
+            </p>
+
+            <p className="card-text">{project.description}</p>
+
+            <div className="mb-2">
+              {project.skills.map((skill, index) => <span key={index} className="badge badge-primary p-2 mr-2">{skill}</span>)}
+            </div>
+
+            <Link to={`/${project.user[0]._id}`} className="text-dark">{project.user[0].email}</Link>
+
+          </div>
+        </div>
+      )
+    );
+  }
+
   render() {
     return (
       <div className="app-view">
@@ -47,19 +77,7 @@ class Projects extends Component {
               </div>
               <div className="row">
                 <div className="col">
-                  {
-                    this.state.projects.map(project => {
-                      return (
-                        <div className="card mb-3" key={project._id}>
-                          <div className="card-body">
-                            <h5 className="card-title">{project.name}</h5>
-                            <p className="card-text">{project.description}</p>
-                            <Link to={`/project/${project._id}`} className="btn btn-primary">Ver Projeto</Link>
-                          </div>
-                        </div>
-                      );
-                    })
-                  }
+                  {this.mountProjectsList()}
                 </div>
               </div>
             </div>
