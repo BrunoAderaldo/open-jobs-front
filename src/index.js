@@ -85,7 +85,7 @@ ReactDOM.render(
       <Route path="/auth/sign-up" component={Register} />
       <PrivateRoute path="/dashboard" component={Dashboard} />
       <Route path="/projects" component={Projects} />
-      <PrivateRoute path="/settings" component={Settings} />
+      <PrivateRoute path="/users/settings" component={Settings} />
       <Route path="/project/:id" component={ProjectDetail} />
       <Route path="/:id" component={Profile} />
       <Route path="*" component={Error404} />
