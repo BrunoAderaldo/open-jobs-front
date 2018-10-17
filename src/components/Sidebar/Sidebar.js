@@ -13,7 +13,7 @@ class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
-        <h1 className="mb-2 text-center">OpenJobs</h1>
+        <h1 className="my-2 text-center">OpenJobs</h1>
         <nav>
           <ul className="nav flex-column">
             <li className="nav-item">
