@@ -40,12 +40,6 @@ class ProjectDetail extends Component {
     }
   }
 
-  isProjectOwner() {
-    if (this.state) {
-
-    }
-  }
-
   render() {
     return (
       <div className="app-view">
@@ -69,7 +63,7 @@ class ProjectDetail extends Component {
                     <div className="card-body">
                       <p className="">{this.state.description}</p>
                       {
-                        this.state.skills.map((skill, index) => <span key={index} className="p-2 badge badge-light mr-1">{skill}</span>)
+                        this.state.skills.map((skill, index) => <span key={index} className="badge badge-primary p-2 mr-2">{skill}</span>)
                       }
                     </div>
                   </div>
