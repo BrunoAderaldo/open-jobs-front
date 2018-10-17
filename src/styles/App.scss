@@ -6,6 +6,28 @@ body {
   font-family: 'Muli', sans-serif;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.status-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-page__img {
+  margin: 3rem auto 2rem;
+  width: 25rem;
+}
+
+.status-page__message {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
 .vh-100 {
   height: 100vh;
 }
@@ -21,6 +43,11 @@ body {
   height: calc(100vh - 48px);
 }
 
+.page__title {
+  color: #343a40;
+  font-weight: 700;
+}
+
 .no-caret {
   &.dropdown-toggle::after { display: none; }
 }
@@ -32,6 +59,7 @@ body {
 }
 
 .btn-primary {
+  font-weight: 600;
   background-color: #4236dd;
 
   &:hover {
@@ -43,4 +71,14 @@ body {
   border: 1px solid #eaeaea;
   border-radius: 6px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-title-divider {
+  border-bottom: 1px solid #f5f6f6;
+  padding-bottom: .45rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
 }
