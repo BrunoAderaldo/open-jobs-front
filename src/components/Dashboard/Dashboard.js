@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-
-import { Link } from "react-router-dom";
-
 import Sidebar from "../Sidebar/Sidebar";
 import Headerbar from "../Headerbar/Headerbar";
+
+import imgDashboard from '../../../src/images/dashboard.svg';
 
 class Dashboard extends Component {
   render() {
@@ -21,22 +20,10 @@ class Dashboard extends Component {
               </div>
 
               <div className="row">
-                <div className="col-12 col-md-6">
-                  <div className="card mb-3">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <Link to="/settings" className="btn btn-light">Go somewhere</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6">
-                  <div className="card">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <Link to="#" className="btn btn-light">Go somewhere</Link>
-                    </div>
+                <div className="col">
+                  <div className="status-page">
+                    <img src={imgDashboard} className="status-page__img" alt="Imagem representando um dashboard"/>
+                    <p className="status-page__message text-dark">Estamos construindo um Dashboard perfeito pra você, aguarde!</p>
                   </div>
                 </div>
               </div>
